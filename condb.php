@@ -4,7 +4,11 @@ html {
 }
 </style>
 <?php
-$con= mysqli_connect("localhost","sql_634244113_it","pA5LHYtSn3r73dyt","sql_634244113_it");
+$host = "h1use0ulyws4lqr1.cbetxkdyhwsb.us-east-1.rds.amazonaws.com" ;
+$user = "if3ryonp8v2yhks5" ;
+$pass = "e3wg4fsqc8vljrh0" ;
+$DB = "mdbdl32mu2ovolnh" ;
+$con= mysqli_connect($host,$user,$pass,$DB);
 if(!$con)
 {
      die("<marquee direction='left' style='color: #3498DB;'>เชื่อมต่อฐานข้อมูลผิดพลาด ❌</marquee>");
