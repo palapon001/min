@@ -53,7 +53,7 @@ if (!$_SESSION["id"]) {  //check session
                                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal<?php echo $no ?>">
                                         History Card
                                     </button>
-                                    <a href="http://" class="btn btn-danger">ลบข้อมูล</a>
+                                    <a href='additem/additem-del.php?ItemID=<?php echo $f['ItemID']; ?> ' class="btn btn-danger">ลบข้อมูล</a>
 
                                     <!-- Modal -->
                                     <div class="modal fade" id="exampleModal<?php echo $no ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

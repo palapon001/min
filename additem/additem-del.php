@@ -10,7 +10,7 @@ $result = mysqli_query($con, $sql) or die("Error in query: $sql ");
 if ($result) {
   echo "<script type='text/javascript'>";
   echo "alert('ลบ เสร็จสิ้น');";
-  echo "window.location = './additem.php'; ";
+  echo "window.location = '../page.php'; ";
   echo "</script>";
 } else {
   echo "<script type='text/javascript'>";
