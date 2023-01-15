@@ -30,37 +30,26 @@ extract($row);
             <p class="card-text">
             <form method="post" action="additem-edit-db.php">
                 <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1">ชื่อสินค้า</span>
+                    <span class="input-group-text" id="basic-addon1">itemname: </span>
                     <input class="form-control" type="text" name="ItemName" value="<?php echo $ItemName; ?>" />
                 </div>
                 <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1">จำนวนสินค้า</span>
-                    <input class="form-control" type="text" name="Amount" value="<?php echo $Amount; ?>" />
+                    <span class="input-group-text" id="basic-addon1">Color:</span>
+                    <input class="form-control" type="text" name="Amount" value="<?php echo $itemColor; ?>" />
                 </div>
                 <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1">ราคา</span>
-                    <input class="form-control" type="text" name="Price" value="<?php echo $Price; ?>" />
+                    <span class="input-group-text" id="basic-addon1">Revision:</span>
+                    <input class="form-control" type="text" name="Price" value="<?php echo $itemRevision; ?>" />
                 </div>
                 <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1">ความชื้น</span>
-                    <input class="form-control" type="number" name="Moisture" value="<?php echo $Moisture; ?>" required />
+                    <span class="input-group-text" id="basic-addon1">MPN: </span>
+                    <input class="form-control" type="text" name="Moisture" value="<?php echo $itemMPN; ?>" />
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">รูปภาพ</span>
                     <input class="form-control" type="text" name="imageFileName" value="<?php echo $imageFileName; ?>" />
                 </div>
-                <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1">ประเภทสินค้า</span>
-                    <?php include 'selectProductType.php'; ?>
-                </div>
-                <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1">สมาชิก</span>
-                    <?php include 'selectMember.php'; ?>
-                </div>
-                <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1">สมาชิกใหม่</span>
-                    <input class="form-control" type="text" name="seller" placeholder="กรอกชื่อ-นามสกุล" value="<?php echo $seller; ?>" />
-                </div>
+               
                     <input type="hidden" name="ItemID" value="<?php echo $ItemID; ?>" />
                     <button type="button" class='mt-3 btn btn-danger' onclick="history.back() "> ยกเลิก </button>
                     <input type="submit" class='mt-3 btn btn-warning' value="แก้ไข">

@@ -23,94 +23,15 @@ if (!$_SESSION["id"]) {  //check session
     <div class="card">
         <div class="card-body">
 
-            <?php
-            include 'Dashboard.php';
-            ?>
-            <!-- <form class="d-flex mb-3" role="search"> 
-                <input class="form-control me-2" type="search" id="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="button">Search</button>
-            </form> -->
+            <center>
+                <h2>ALL ITEM</h2>
+            </center>
 
-            <h2>ประเภทข้าว</h2>
+
             <?php
             include './condb.php';
-            $sql = " SELECT * FROM item_type ORDER BY item_type_id ASC ";
-            $q = mysqli_query($con, $sql);
-            $no = 1;
-            while ($f = mysqli_fetch_assoc($q)) {
             ?>
-                <button class="btn btn-danger" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample<?php echo $no; ?>" aria-expanded="false" aria-controls="collapseExample">
-                    <?php echo $f['item_type_name']; ?>
-                </button>
-                <div class="collapse" id="collapseExample<?php echo $no; ?>">
-                    <div class="card card-body">
-                        <div class="container text-center">
-                            <div class="row">
-                                <?php
-                                $itemt_id = $f['item_type_id'];
-                                $qitem = " SELECT * FROM item where ItemTypeID = '$itemt_id' ";
-                                $qi = mysqli_query($con, $qitem);
-                                $no = 1;
-                                while ($f = mysqli_fetch_assoc($qi)) {
-                                ?>
 
-
-                                    <div class="col-md-auto">
-                                        <div class="card mt-3" style="width: 18rem;">
-                                            <img src="<?php echo $f['imageFileName']; ?>" onerror="this.onerror=null; this.src='Logo.png'" class="card-img-top" width="200" height="200">
-                                            <div class="card-body">
-                                                <h5 class="card-title"><?php echo $f['ItemName']; ?></h5>
-                                                <p class="card-text">จำนวน : <?php echo $f['Amount']; ?></p>
-                                                <p class="card-text">ราคา : <?php echo $f['Price']; ?></p>
-                                                <p class="card-text">
-                                                    <button type="button" class="btn btn-primary" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" disabled>
-                                                        <?php
-                                                        if ($f['Member'] == 0) {
-                                                            echo $f['seller'];
-                                                        } else {
-                                                            $iuser = $f['Member'];
-                                                            $isuser = mysqli_query($con, " SELECT * FROM user where member_id = '$iuser'  ");
-                                                            while ($isu = mysqli_fetch_assoc($isuser)) {
-                                                                echo $isu['hname'] . " " . $isu['name'] . " " . $isu['lname'] . " " . $isu['tel'];
-                                                            }
-                                                        }
-                                                        ?>
-                                                    </button>
-                                                </p>
-                                                <p class="card-text">ประเภทข้าว :
-                                                    <?php
-                                                    $item_t_id = $f['ItemTypeID'];
-                                                    $itemtypename = mysqli_query($con, " SELECT * FROM item_type where item_type_id = $item_t_id  ");
-                                                    while ($a = mysqli_fetch_assoc($itemtypename)) {
-                                                        echo $a['item_type_name'];
-                                                    }
-                                                    ?>
-                                                </p>
-                                                <form action="Cart_add.php" method="post">
-                                                    <input type="hidden" name="ItemName" value="<?php echo $f['ItemName']; ?>">
-                                                    <input type="hidden" name="QTY" value="1">
-                                                    <input type="hidden" name="TotalPrice" value="<?php echo $f['Price']; ?>">
-                                                    <input type="submit" class="btn btn-primary" value="ใส่ตะกร้า">
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                <?php
-                                    $no++;
-                                }
-                                ?>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            <?php
-                $no++;
-            }
-            ?>
-            <p>
             <div class="container text-center">
                 <div class="row">
                     <?php
@@ -120,44 +41,47 @@ if (!$_SESSION["id"]) {  //check session
                     while ($f = mysqli_fetch_assoc($q)) {
                     ?>
 
-
                         <div class="col-md-auto">
                             <div class="card mt-3" style="width: 18rem;">
                                 <img src="<?php echo $f['imageFileName']; ?>" onerror="this.onerror=null; this.src='Logo.png'" class="card-img-top" width="200" height="200">
                                 <div class="card-body">
+                                    <div class="alert alert-warning" role="alert">
+                                        สถานะ : รอผลการตรวจสอบ
+                                    </div>
                                     <h5 class="card-title"><?php echo $f['ItemName']; ?></h5>
-                                    <p class="card-text">จำนวน : <?php echo $f['Amount']; ?></p>
-                                    <p class="card-text">ราคา : <?php echo $f['Price']; ?></p>
-                                    <p class="card-text">
-                                        <button type="button" class="btn btn-primary" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" disabled>
-                                            <?php
-                                            if ($f['Member'] == 0) {
-                                                echo $f['seller'];
-                                            } else {
-                                                $iuser = $f['Member'];
-                                                $isuser = mysqli_query($con, " SELECT * FROM user where member_id = '$iuser'  ");
-                                                while ($isu = mysqli_fetch_assoc($isuser)) {
-                                                    echo $isu['hname'] . " " . $isu['name'] . " " . $isu['lname'] . " " . $isu['tel'];
-                                                }
-                                            }
-                                            ?>
-                                        </button>
-                                    </p>
-                                    <p class="card-text">ประเภทข้าว :
-                                        <?php
-                                        $item_t_id = $f['ItemTypeID'];
-                                        $itemtypename = mysqli_query($con, " SELECT * FROM item_type where item_type_id = $item_t_id  ");
-                                        while ($a = mysqli_fetch_assoc($itemtypename)) {
-                                            echo $a['item_type_name'];
-                                        }
-                                        ?>
-                                    </p>
-                                    <form action="Cart_add.php" method="post">
-                                        <input type="hidden" name="ItemName" value="<?php echo $f['ItemName']; ?>">
-                                        <input type="hidden" name="QTY" value="1">
-                                        <input type="hidden" name="TotalPrice" value="<?php echo $f['Price']; ?>">
-                                        <input type="submit" class="btn btn-primary" value="ใส่ตะกร้า">
-                                    </form>
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal<?php echo $no ?>">
+                                        History Card
+                                    </button>
+                                    <a href="http://" class="btn btn-danger">ลบข้อมูล</a>
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModal<?php echo $no ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h1 class="modal-title fs-5" id="exampleModalLabel">รายละเอียด <?php echo $f['ItemName']; ?></h1>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <img src="<?php echo $f['imageFileName']; ?>" onerror="this.onerror=null; this.src='Logo.png'" class="card-img-top" width="200" height="200">
+                                                    <p>
+
+                                                    <h5 class="card-title">GB000284000</h5>
+                                                    <h5 class="card-title">Color : Black</h5>
+                                                    <h5 class="card-title">Revision: J</h5>
+                                                    <h5 class="card-title">MPN : A9T80:-60008</h5>
+
+                                                    </p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ปิด</button>
+                                                    <a href='./additem/additem-editform.php?ItemID=<?php echo $f['ItemID']; ?> ' class="btn btn-warning">แก้ไข</a>
+                                                    <a href='./additem/additemcheck-editform.php?ItemID=<?php echo $f['ItemID']; ?> ' class="btn btn-primary">เพิ่มข้อมูลการตรวจสอบชิ้นงาน</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
 
                                 </div>
                             </div>
@@ -170,6 +94,7 @@ if (!$_SESSION["id"]) {  //check session
 
                     mysqli_close($con);
                     ?>
+
                 </div>
             </div>
             </p>
