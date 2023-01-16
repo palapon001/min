@@ -1,12 +1,10 @@
-<?php
-include 'bootstrap.php';
-?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <?php
     include 'HeadDetail.php';
+    include 'bootstrap.php';
     ?>
 </head>
 
