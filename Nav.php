@@ -19,15 +19,39 @@
              <div class="modal-dialog">
                  <div class="modal-content">
                      <div class="modal-header">
-                         <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                         <h1 class="modal-title fs-5" id="exampleModalLabel">เพิ่มข้อมูล</h1>
                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                      </div>
                      <div class="modal-body">
-                         ...
+                         <form method="post" action="additem-edit-db.php">
+                             <div class="input-group mb-3">
+                                 <span class="input-group-text" id="basic-addon1">itemname: </span>
+                                 <input class="form-control" type="text" name="ItemName" value="" />
+                             </div>
+                             <div class="input-group mb-3">
+                                 <span class="input-group-text" id="basic-addon1">Color:</span>
+                                 <input class="form-control" type="text" name="Amount" value="" />
+                             </div>
+                             <div class="input-group mb-3">
+                                 <span class="input-group-text" id="basic-addon1">Revision:</span>
+                                 <input class="form-control" type="text" name="Price" value="" />
+                             </div>
+                             <div class="input-group mb-3">
+                                 <span class="input-group-text" id="basic-addon1">MPN: </span>
+                                 <input class="form-control" type="text" name="Moisture" value="" />
+                             </div>
+                             <div class="input-group mb-3">
+                                 <span class="input-group-text" id="basic-addon1">รูปภาพ</span>
+                                 <input class="form-control" type="text" name="imageFileName" value="" />
+                             </div>
+
+                             
+                            
                      </div>
                      <div class="modal-footer">
                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                         <button type="button" class="btn btn-primary">Save changes</button>
+                         <input type="submit" class='btn btn-primary' value="บันทึกข้อมูล">
+                         </form>
                      </div>
                  </div>
              </div>
