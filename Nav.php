@@ -23,22 +23,22 @@
                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                      </div>
                      <div class="modal-body">
-                         <form method="post" action="additem-edit-db.php">
+                         <form method="post" action="./additem/additem-add.php">
                              <div class="input-group mb-3">
                                  <span class="input-group-text" id="basic-addon1">itemname: </span>
                                  <input class="form-control" type="text" name="ItemName" value="" />
                              </div>
                              <div class="input-group mb-3">
                                  <span class="input-group-text" id="basic-addon1">Color:</span>
-                                 <input class="form-control" type="text" name="Amount" value="" />
+                                 <input class="form-control" type="text" name="itemColor" value="" />
                              </div>
                              <div class="input-group mb-3">
                                  <span class="input-group-text" id="basic-addon1">Revision:</span>
-                                 <input class="form-control" type="text" name="Price" value="" />
+                                 <input class="form-control" type="text" name="itemRevision" value="" />
                              </div>
                              <div class="input-group mb-3">
                                  <span class="input-group-text" id="basic-addon1">MPN: </span>
-                                 <input class="form-control" type="text" name="Moisture" value="" />
+                                 <input class="form-control" type="text" name="itemMPN" value="" />
                              </div>
                              <div class="input-group mb-3">
                                  <span class="input-group-text" id="basic-addon1">รูปภาพ</span>
