@@ -18,6 +18,7 @@ $ItemName = mysqli_real_escape_string($con, $_GET['ItemName']);
 </head>
 
 <body>
+    <?php include "Nav.php"; ?>
     <div class="card mt-3">
         <div class="card-body">
             <h3>HistoryCard : <?php echo $ItemName ?> </h3>
