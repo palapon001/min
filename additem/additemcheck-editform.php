@@ -28,43 +28,46 @@ extract($row);
         <div class="card-body">
             <h3 class="card-title">แก้ไขข้อมูล <?php echo $ItemName; ?> </h3>
             <p class="card-text">
-            <form method="post" action="additem-edit-db.php">
+            <form method="post" action="additemcheck-add.php">
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">itemname: </span>
                     <input class="form-control" type="text" name="ItemName" value="<?php echo $ItemName; ?>" disabled />
+                    <input class="form-control" type="hidden" name="ItemName" value="<?php echo $ItemName; ?>"  />
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Color:</span>
-                    <input class="form-control" type="text" name="Amount" value="<?php echo $itemColor; ?>" disabled />
+                    <input class="form-control" type="text" name="itemColor" value="<?php echo $itemColor; ?>" disabled />
+                    <input class="form-control" type="hidden" name="itemColor" value="<?php echo $itemColor; ?>"  />
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Revision:</span>
-                    <input class="form-control" type="text" name="Price" value="<?php echo $itemRevision; ?>" disabled />
+                    <input class="form-control" type="text" name="itemRevision" value="<?php echo $itemRevision; ?>" disabled />
+                    <input class="form-control" type="hidden" name="itemRevision" value="<?php echo $itemRevision; ?>"  />
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">MPN: </span>
-                    <input class="form-control" type="text" name="Moisture" value="<?php echo $itemMPN; ?>" disabled />
+                    <input class="form-control" type="text" name="itemMPN" value="<?php echo $itemMPN; ?>" disabled />
+                    <input class="form-control" type="hidden" name="itemMPN" value="<?php echo $itemMPN; ?>"  />
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">รูปภาพ</span>
                     <img src="<?php echo $imageFileName; ?>" width="100" height="100">
                     <input class="form-control" type="text" name="imageFileName" value="" disabled />
+                    <input class="form-control" type="hidden" name="imageFileName" value=""  />
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Total Quality</span>
-                    <input class="form-control" type="number" name="imageFileName" value="" />
+                    <input class="form-control" type="number" name="Total" value="" />
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Date No </span>
-                    <input class="form-control" type="Date" name="imageFileName" value="" />
+                    <input class="form-control" type="Date" name="Date" value="" />
                 </div>
                 <div class="mb-3">
                     <label for="exampleFormControlTextarea1" class="form-label">หมายเหตุ</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" name="Note" rows="3"></textarea>
                 </div>
 
-
-                <input type="hidden" name="ItemID" value="<?php echo $ItemID; ?>" />
                 <button type="button" class='mt-3 btn btn-danger' onclick="history.back() "> ยกเลิก </button>
                 <input type="submit" class='mt-3 btn btn-warning' value="แก้ไข">
             </form>
