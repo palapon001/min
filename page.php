@@ -50,11 +50,11 @@ if (!$_SESSION["id"]) {  //check session
                                     </div>
                                     <h5 class="card-title"><?php echo $f['ItemName']; ?></h5>
                                     <!-- Button trigger modal -->
-                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal<?php echo $no ?>">
-                                        History Card
+                                    <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal<?php echo $no ?>">
+                                        ข้อมูล
                                     </button>
                                     <a href='additem/additem-del.php?ItemID=<?php echo $f['ItemID']; ?> ' class="btn btn-danger">ลบข้อมูล</a>
-
+                                    <a href='HistoryCard.php?ItemName=<?php echo $f['ItemName']; ?>' class="mt-3 btn btn-primary form-control">History Card</a>
                                     <!-- Modal -->
                                     <div class="modal fade" id="exampleModal<?php echo $no ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog">
@@ -82,7 +82,6 @@ if (!$_SESSION["id"]) {  //check session
                                             </div>
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
