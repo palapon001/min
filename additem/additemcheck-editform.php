@@ -26,7 +26,7 @@ extract($row);
 <body>
     <div class="card mt-3">
         <div class="card-body">
-            <h3 class="card-title">แก้ไขข้อมูล <?php echo $ItemName; ?> </h3>
+            <h3 class="card-title">เพิ่มข้อมูลการตรวจสอบชิ้นงาน :  <?php echo $ItemName; ?> </h3>
             <p class="card-text">
             <form method="post" action="additemcheck-add.php">
                 <div class="input-group mb-3">
@@ -56,20 +56,22 @@ extract($row);
                     <input class="form-control" type="hidden" name="imageFileName" value=""  />
                 </div>
                 <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1">Total Quality</span>
+                    <span class="input-group-text btn btn-danger" id="basic-addon1">Total Quality</span>
                     <input class="form-control" type="number" name="Total" value="" />
                 </div>
                 <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1">Date No </span>
+                    <span class="input-group-text btn btn-danger" id="basic-addon1">Date No </span>
                     <input class="form-control" type="Date" name="Date" value="" />
                 </div>
-                <div class="mb-3">
+                <p>
+                <div class="mb-3 ">
                     <label for="exampleFormControlTextarea1" class="form-label">หมายเหตุ</label>
                     <textarea class="form-control" id="exampleFormControlTextarea1" name="Note" rows="3"></textarea>
                 </div>
+                </p>
 
                 <button type="button" class='mt-3 btn btn-danger' onclick="history.back() "> ยกเลิก </button>
-                <input type="submit" class='mt-3 btn btn-warning' value="แก้ไข">
+                <input type="submit" class='mt-3 btn btn-primary' value="เพิ่มข้อมูล">
             </form>
             </p>
         </div>
