@@ -28,6 +28,7 @@ $ItemName = mysqli_real_escape_string($con, $_GET['ItemName']);
                     <tr>
                         <td>NO</td>
                         <td>รายการ</td>
+                        <td>หมายเหตุ</td>
                         <td>วันที่</td>
                         <td>แก้ไข</td>
                         <td>ลบ</td>
@@ -42,9 +43,10 @@ $ItemName = mysqli_real_escape_string($con, $_GET['ItemName']);
                         <tr>
                             <td><?php echo $no; ?></td>
                             <td><?php echo $f['sItemName']; ?></td>
+                            <td><?php echo $f['sNote']; ?></td>
                              <td><?php echo $f['sDate']; ?></td>
                             <td><a href='./additem/HistoryCard-editform.php?sItemID=<?php echo $f['sItemID']; ?>' class="btn btn-warning">แก้ไข</a></td>
-                            <td><a href='additemtype-del.php?sItemID= <?php echo $f['sItemID']; ?> ' class="btn btn-danger" onclick="return confirm('ต้องการจะลบหรือไม่')">ลบ</a></td>
+                            <td><a href='./additem/HistoryCard-del.php?sItemID=<?php echo $f['sItemID']; ?>' class="btn btn-danger" onclick="return confirm('ต้องการจะลบหรือไม่')">ลบ</a></td>
 
                         </tr>
 

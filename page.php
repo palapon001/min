@@ -67,10 +67,10 @@ if (!$_SESSION["id"]) {  //check session
                                                     <img src="<?php echo $f['imageFileName']; ?>" onerror="this.onerror=null; this.src='Logo.png'" class="card-img-top" width="200" height="200">
                                                     <p>
 
-                                                    <h5 class="card-title">GB000284000</h5>
-                                                    <h5 class="card-title">Color : Black</h5>
-                                                    <h5 class="card-title">Revision: J</h5>
-                                                    <h5 class="card-title">MPN : A9T80:-60008</h5>
+                                                    <h5 class="card-title"><?php echo $f['ItemName']; ?></h5>
+                                                    <h5 class="card-title">Color : <?php echo $f['itemColor']; ?></h5>
+                                                    <h5 class="card-title">Revision: <?php echo $f['itemRevision']; ?></h5>
+                                                    <h5 class="card-title">MPN : <?php echo $f['itemMPN']; ?></h5>
 
                                                     </p>
                                                 </div>

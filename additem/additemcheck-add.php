@@ -23,6 +23,15 @@ $Note = $_POST["Note"];
 // 		 echo "</script>";
 
 //   }else{
+	if($Total == ""){
+		$Total = 0 ;
+	}
+	if($Date == ""){
+		$Date = date("Y-m-d h:i:s") ;
+	}
+	if($Note == ""){
+		$Note = "..." ;
+	}
 	if($imageFileName == ""){
 		$imageFileName = "https://s10x.herokuapp.com/Logo.png" ;
 	}

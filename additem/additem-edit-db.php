@@ -4,26 +4,23 @@ include('../condb.php');
 //สร้างตัวแปรสำหรับรับค่าที่นำมาแก้ไขจากฟอร์ม
 $ItemID = $_POST["ItemID"];
 $ItemName = $_POST["ItemName"];
-$Amount = $_POST["Amount"];
-$Price = $_POST["Price"];
+$itemColor = $_POST["itemColor"];
+$itemRevision = $_POST["itemRevision"];
 $imageFileName = $_POST["imageFileName"];
-$ItemTypeID = $_POST["ItemTypeID"];
-$Member = $_POST["Member"];
-$seller = $_POST["seller"];
-$Moisture = $_POST["Moisture"];
+$itemMPN = $_POST["itemMPN"];
+// $Total = $_POST["Total"]; 
+// $Date = $_POST["Date"];
+// $Note = $_POST["Note"];
 //ทำการปรับปรุงข้อมูลที่จะแก้ไขลงใน database 
 
 $sql = "UPDATE `item` 
 SET 
 `ItemID`= '$ItemID',
 `ItemName`='$ItemName'
-,`Amount`='$Amount',
-`Price`='$Price',
-`imageFileName`='$imageFileName',
-`ItemTypeID`='$ItemTypeID',
-`Member`='$Member' ,
-`seller`='$seller' ,
-`Moisture`='$Moisture' 
+,`imageFileName`='$imageFileName',
+`itemColor`='$itemColor',
+`itemRevision`='$itemRevision',
+`itemMPN`='$itemMPN'
 
 WHERE ItemID = '$ItemID' ";
 
@@ -36,12 +33,12 @@ mysqli_close($con); //ปิดการเชื่อมต่อ database
 if ($result) {
 	echo "<script type='text/javascript'>";
 	echo "alert('สำเร็จ');";
-	echo "window.location = 'additem.php'; ";
+	echo "window.location = '../page.php'; ";
 	echo "</script>";
 } else {
 	echo "<script type='text/javascript'>";
 	echo "alert('ไม่สำเเร็จ!!!');";
-	echo "window.location = '.index.php'; ";
+	echo "window.location = '../page.php'; ";
 	echo "</script>";
 }
 ?>

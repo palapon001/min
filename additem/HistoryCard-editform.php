@@ -57,7 +57,7 @@ extract($row);
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text btn btn-danger" id="basic-addon1">Date No </span>
-                    <input class="form-control" type="Date" name="Date" value="<?php echo $sDate; ?>" />
+                    <input class="form-control" type="datetime-local" name="Date" value="<?php echo $sDate; ?>" />
                 </div>
                 <p>
                 <div class="mb-3 ">

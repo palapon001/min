@@ -35,15 +35,15 @@ extract($row);
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Color:</span>
-                    <input class="form-control" type="text" name="Amount" value="<?php echo $itemColor; ?>" />
+                    <input class="form-control" type="text" name="itemColor" value="<?php echo $itemColor; ?>" />
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Revision:</span>
-                    <input class="form-control" type="text" name="Price" value="<?php echo $itemRevision; ?>" />
+                    <input class="form-control" type="text" name="itemRevision" value="<?php echo $itemRevision; ?>" />
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">MPN: </span>
-                    <input class="form-control" type="text" name="Moisture" value="<?php echo $itemMPN; ?>" />
+                    <input class="form-control" type="text" name="itemMPN" value="<?php echo $itemMPN; ?>" />
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">รูปภาพ</span>
