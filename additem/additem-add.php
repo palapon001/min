@@ -6,7 +6,7 @@ $itemColor = $_POST["itemColor"];
 $itemRevision = $_POST["itemRevision"];
 $imageFileName = $_POST["imageFileName"];
 $itemMPN = $_POST["itemMPN"];
-
+$cosA = $_POST["cosA"];
 // เช็คว่ามีข้อมูลนี้อยู่หรือไม่
 // $check = "select * from item  where ItemName = '$ItemName' ";
 // $result1 = mysqli_query($con,$check) or die("$check");
@@ -24,8 +24,8 @@ $itemMPN = $_POST["itemMPN"];
 		$imageFileName = "https://s10x.herokuapp.com/Logo.png" ;
 	}
 //เพิ่มเข้าไปในฐานข้อมูล
-$sql = "INSERT INTO item(ItemName,itemColor,itemRevision,imageFileName,itemMPN)
-			 VALUES('$ItemName','$itemColor','$itemRevision','$imageFileName','$itemMPN')";
+$sql = "INSERT INTO item(ItemName,itemColor,itemRevision,imageFileName,itemMPN,cosA)
+			 VALUES('$ItemName','$itemColor','$itemRevision','$imageFileName','$itemMPN','$cosA')";
 
 $result = mysqli_query($con, $sql) or die("Error in query: $sql " );
 //ปิดการเชื่อมต่อ database

@@ -44,6 +44,10 @@
                                  <span class="input-group-text" id="basic-addon1">รูปภาพ</span>
                                  <input class="form-control" type="text" name="imageFileName" value="" />
                              </div>
+                             <div class="input-group mb-3">
+                                 <span class="input-group-text" id="basic-addon1">Cosmetic/Appearance</span>
+                                 <input class="form-control" type="text" name="cosA" value="" />
+                             </div>
 
                              
                             
