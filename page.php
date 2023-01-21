@@ -42,11 +42,11 @@ if (!$_SESSION["id"]) {  //check session
                     ?>
 
                         <div class="col-md-auto">
-                            <div class="card mt-3" style="width: 18rem;">
-                                <img src="<?php echo $f['imageFileName']; ?>" onerror="this.onerror=null; this.src='Logo.png'" class="card-img-top" width="200" height="200">
+                            <div class="card mt-3" style="width: 19rem;">
+                                <img src="<?php echo $f['imageFileName']; ?>" onerror="this.onerror=null; this.src='Logo.png'" class="card-img-top" width="200" height="220">
                                 <div class="card-body">
-                                    <div class="alert alert-warning" role="alert">
-                                        สถานะ : รอผลการตรวจสอบ
+                                    <div class="alert alert-<?php if($f['status'] == 'กำลังตรวจสอบ') { echo 'warning' ;}else{ echo 'success'; }?>" role="alert">
+                                        สถานะ : <?php echo $f['status']; ?>
                                     </div>
                                     <h5 class="card-title"><?php echo $f['ItemName']; ?></h5>
                                     <!-- Button trigger modal -->
@@ -64,13 +64,14 @@ if (!$_SESSION["id"]) {  //check session
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <img src="<?php echo $f['imageFileName']; ?>" onerror="this.onerror=null; this.src='Logo.png'" class="card-img-top" width="200" height="200">
+                                                    <img src="<?php echo $f['imageFileName']; ?>" onerror="this.onerror=null; this.src='Logo.png'" class="card-img-top" width="200" height="230">
                                                     <p>
 
                                                     <h5 class="card-title"><?php echo $f['ItemName']; ?></h5>
                                                     <h5 class="card-title">Color : <?php echo $f['itemColor']; ?></h5>
                                                     <h5 class="card-title">Revision: <?php echo $f['itemRevision']; ?></h5>
                                                     <h5 class="card-title">MPN : <?php echo $f['itemMPN']; ?></h5>
+                                                    <h5 class="card-title"><?php echo $f['cosA']; ?></h5>
 
                                                     </p>
                                                 </div>

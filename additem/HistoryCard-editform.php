@@ -31,7 +31,7 @@ extract($row);
             <form method="post" action="HistoryCard-edit-db.php">
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">itemname: </span>
-                    <input class="form-control" type="text" name="ItemID" value="<?php echo $sItemID; ?>"  />
+                    <input class="form-control" type="hidden" name="ItemID" value="<?php echo $sItemID; ?>"  />
                     <input class="form-control" type="text" name="ItemName" value="<?php echo $sItemName; ?>"  />
                 </div>
                 <div class="input-group mb-3">
@@ -48,7 +48,7 @@ extract($row);
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">รูปภาพ</span>
-                    <img src="<?php echo $imageFileName; ?>" width="100" height="100">
+                    <img src="<?php echo $simageFileName; ?>" width="100" height="100">
                     <input class="form-control" type="text" name="imageFileName" value="<?php echo $simageFileName; ?>"  />
                 </div>
                 <div class="input-group mb-3">
@@ -58,6 +58,14 @@ extract($row);
                 <div class="input-group mb-3">
                     <span class="input-group-text btn btn-danger" id="basic-addon1">Date No </span>
                     <input class="form-control" type="datetime-local" name="Date" value="<?php echo $sDate; ?>" />
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text btn btn-danger" id="basic-addon1">DateCode: </span>
+                    <input class="form-control" type="text" name="sDateCode" value="<?php echo $sDateCode; ?>"  />
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text btn btn-danger" id="basic-addon1">Invoice: </span>
+                    <input class="form-control" type="text" name="sInvoice" value="<?php echo $sInvoice; ?>"  />
                 </div>
                 <p>
                 <div class="mb-3 ">

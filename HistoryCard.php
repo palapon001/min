@@ -19,17 +19,19 @@ $ItemName = mysqli_real_escape_string($con, $_GET['ItemName']);
 
 <body>
     <?php include "Nav.php"; ?>
-    <div class="card mt-3">
+    <div class="card mt-3" >
+    <h3 class="card-header">HistoryCard : <?php echo $ItemName ?> </h3>
         <div class="card-body">
-            <h3>HistoryCard : <?php echo $ItemName ?> </h3>
-            <h5>invoice</h5>
+        <h5>invoice</h5>
             <div class="table-responsive">
                 <table class='table'>
                     <tr>
                         <td>NO</td>
-                        <td>รายการ</td>
+                        <td>Total Quality</td>
+                        <td>Date No</td>
+                        <td>Date Code</td>
+                        <td>Invoice</td>
                         <td>หมายเหตุ</td>
-                        <td>วันที่</td>
                         <td>แก้ไข</td>
                         <td>ลบ</td>
                     </tr>
@@ -42,9 +44,11 @@ $ItemName = mysqli_real_escape_string($con, $_GET['ItemName']);
                     ?>
                         <tr>
                             <td><?php echo $no; ?></td>
-                            <td><?php echo $f['sItemName']; ?></td>
+                            <td><?php echo $f['sTotal']; ?></td>
+                            <td><?php echo $f['sDate']; ?></td>
+                            <td><?php echo $f['sDateCode']; ?></td>
+                            <td><?php echo $f['sInvoice']; ?></td>
                             <td><?php echo $f['sNote']; ?></td>
-                             <td><?php echo $f['sDate']; ?></td>
                             <td><a href='./additem/HistoryCard-editform.php?sItemID=<?php echo $f['sItemID']; ?>' class="btn btn-warning">แก้ไข</a></td>
                             <td><a href='./additem/HistoryCard-del.php?sItemID=<?php echo $f['sItemID']; ?>' class="btn btn-danger" onclick="return confirm('ต้องการจะลบหรือไม่')">ลบ</a></td>
 

@@ -11,6 +11,8 @@ $itemMPN = $_POST["itemMPN"];
 $Total = $_POST["Total"]; 
 $Date = $_POST["Date"];
 $Note = $_POST["Note"];
+$DateCode = $_POST["sDateCode"];
+$Invoice = $_POST["sInvoice"];
 //ทำการปรับปรุงข้อมูลที่จะแก้ไขลงใน database 
 
 $sql = "UPDATE `saveReport` 
@@ -23,7 +25,9 @@ SET
 `sitemMPN`='$itemMPN',
 `sTotal`='$Total' ,
 `sDate`='$Date' ,
-`sNote`='$Note' 
+`sDateCode`='$DateCode' ,
+`sInvoice`='$Invoice' ,
+`sNote`='$Note'
 
 WHERE sItemID = '$ItemID' ";
 

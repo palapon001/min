@@ -49,10 +49,22 @@ extract($row);
                     <span class="input-group-text" id="basic-addon1">รูปภาพ</span>
                     <input class="form-control" type="text" name="imageFileName" value="<?php echo $imageFileName; ?>" />
                 </div>
-               
-                    <input type="hidden" name="ItemID" value="<?php echo $ItemID; ?>" />
-                    <button type="button" class='mt-3 btn btn-danger' onclick="history.back() "> ยกเลิก </button>
-                    <input type="submit" class='mt-3 btn btn-warning' value="แก้ไข">
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Cosmetic/Appearance</span>
+                    <input class="form-control" type="text" name="cosA" value="<?php echo $cosA; ?>" />
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">สถานะ</span>
+                    <select name="status" class="form-control"  >
+                        <option value="<?php echo $status; ?>" selected disabled hidden><?php echo $status; ?></option>
+                        <option value="ตรวจสอบเรียบร้อย">ตรวจสอบเรียบร้อย</option>
+                        <option value="กำลังตรวจสอบ">กำลังตรวจสอบ</option>
+                    </select>
+                </div>
+
+                <input type="hidden" name="ItemID" value="<?php echo $ItemID; ?>" />
+                <button type="button" class='mt-3 btn btn-danger' onclick="history.back() "> ยกเลิก </button>
+                <input type="submit" class='mt-3 btn btn-warning' value="แก้ไข">
             </form>
             </p>
         </div>

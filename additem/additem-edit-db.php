@@ -8,6 +8,8 @@ $itemColor = $_POST["itemColor"];
 $itemRevision = $_POST["itemRevision"];
 $imageFileName = $_POST["imageFileName"];
 $itemMPN = $_POST["itemMPN"];
+$cosA = $_POST["cosA"];
+$status = $_POST["status"];
 // $Total = $_POST["Total"]; 
 // $Date = $_POST["Date"];
 // $Note = $_POST["Note"];
@@ -20,6 +22,8 @@ SET
 ,`imageFileName`='$imageFileName',
 `itemColor`='$itemColor',
 `itemRevision`='$itemRevision',
+`cosA`='$cosA',
+`status`='$status',
 `itemMPN`='$itemMPN'
 
 WHERE ItemID = '$ItemID' ";

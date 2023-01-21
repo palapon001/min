@@ -2,7 +2,7 @@
 session_start();
 
 include '../condb.php';
-
+date_default_timezone_set('Asia/Bangkok');
 $ItemID = mysqli_real_escape_string($con, $_GET['ItemID']);
 
 //2. query ข้อมูลจากตาราง: 
@@ -61,7 +61,15 @@ extract($row);
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text btn btn-danger" id="basic-addon1">Date No </span>
-                    <input class="form-control" type="Date" name="Date" value="" />
+                    <input class="form-control" type="text" name="Date" value="<?php echo date("Y-m-d H:i:s") ; ?>" disabled/>
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text btn btn-danger" id="basic-addon1">DateCode: </span>
+                    <input class="form-control" type="text" name="sDateCode" value=""  />
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text btn btn-danger" id="basic-addon1">Invoice: </span>
+                    <input class="form-control" type="text" name="sInvoice" value=""  />
                 </div>
                 <p>
                 <div class="mb-3 ">
