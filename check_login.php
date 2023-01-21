@@ -7,13 +7,15 @@ if (isset($_POST['username'])) {
   $username = $_POST['username'];
   $password = $_POST['password'];
   //query 
-  $sql = "SELECT * FROM login Where username='" . $username . "' and password='" . md5($password) . "' ";
+  $sql = "SELECT * FROM login Where username='" . $username . "' and password='" . $password . "' ";
 
   $result = mysqli_query($con, $sql);
 
   if (mysqli_num_rows($result) == 1) {
     $row = mysqli_fetch_array($result);
     $_SESSION["id"] = $row["login_id"];
+    $_SESSION["username"] = $row["username"];
+    $_SESSION["status"] = $row["statusLogin"];
     Header("Location: page.php");
   } else {
     echo "<script>";

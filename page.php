@@ -18,8 +18,8 @@ if (!$_SESSION["id"]) {  //check session
 
     include 'bootstrap.php';
     include 'Nav.php';
-    ?>
 
+    ?>
     <div class="card">
         <div class="card-body">
 
@@ -45,7 +45,11 @@ if (!$_SESSION["id"]) {  //check session
                             <div class="card mt-3" style="width: 19rem;">
                                 <img src="<?php echo $f['imageFileName']; ?>" onerror="this.onerror=null; this.src='Logo.png'" class="card-img-top" width="200" height="220">
                                 <div class="card-body">
-                                    <div class="alert alert-<?php if($f['status'] == 'กำลังตรวจสอบ') { echo 'warning' ;}else{ echo 'success'; }?>" role="alert">
+                                    <div class="alert alert-<?php if ($f['status'] == 'กำลังตรวจสอบ') {
+                                                                echo 'warning';
+                                                            } else {
+                                                                echo 'success';
+                                                            } ?>" role="alert">
                                         สถานะ : <?php echo $f['status']; ?>
                                     </div>
                                     <h5 class="card-title"><?php echo $f['ItemName']; ?></h5>
@@ -53,7 +57,9 @@ if (!$_SESSION["id"]) {  //check session
                                     <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal<?php echo $no ?>">
                                         ข้อมูล
                                     </button>
-                                    <a href='additem/additem-del.php?ItemID=<?php echo $f['ItemID']; ?> ' class="btn btn-danger">ลบข้อมูล</a>
+                                    <?php if ($_SESSION['status'] == 'ADMIN') { ?>
+                                        <a href='additem/additem-del.php?ItemID=<?php echo $f['ItemID']; ?> ' class="btn btn-danger">ลบข้อมูล</a>
+                                    <?php } ?>
                                     <a href='HistoryCard.php?ItemName=<?php echo $f['ItemName']; ?>' class="mt-3 btn btn-primary form-control">History Card</a>
                                     <!-- Modal -->
                                     <div class="modal fade" id="exampleModal<?php echo $no ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

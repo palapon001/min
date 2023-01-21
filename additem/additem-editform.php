@@ -56,7 +56,7 @@ extract($row);
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">สถานะ</span>
                     <select name="status" class="form-control"  >
-                        <option value="<?php echo $status; ?>" selected disabled hidden><?php echo $status; ?></option>
+                        <option value="<?php echo $status; ?>" selected hidden><?php echo $status; ?></option>
                         <option value="ตรวจสอบเรียบร้อย">ตรวจสอบเรียบร้อย</option>
                         <option value="กำลังตรวจสอบ">กำลังตรวจสอบ</option>
                     </select>

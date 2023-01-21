@@ -8,7 +8,7 @@ include 'bootstrap.php';
     <?php
     include 'HeadDetail.php';
     ?>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
 </head>
 
@@ -16,27 +16,23 @@ include 'bootstrap.php';
     <div class="h-100 d-flex align-items-center justify-content-center">
         <div class="card" style="width: 25rem;">
             <div class="card-body">
-                <center>
-                <form name="form1" method="post" action="check_login.php">
-                        <p>
-                        <h1>SCQA</h1>
-                        <h5>(Supplier Chain Quality Assurance)</h5>
-                        </p>
-                        <div class="input-group mb-3">
-                            <span class="input-group-text material-symbols-outlined">
-                                account_circle
-                            </span>
-                            <input name="username" type="text" id="username" placeholder="ชื่อผู้ใช้" class="form-control">
-                        </div>
-                        <div class="input-group mb-3">
-                            <span class="input-group-text material-symbols-outlined">
-                                lock
-                            </span>
-                            <input name="password" type="password" id="password" placeholder="รหัสผ่าน" class="form-control">
-                        </div>
-                        <p><input type="submit" name="Submit" value="เข้าสู่ระบบ" class="btn btn-primary"></p>
-                    </form>
-                </center>
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Login</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Register</button>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+                        <?php include 'Login.php'; ?>
+                    </div>
+                    <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+                        <?php include 'Register.php'; ?>
+                    </div>
+                </div>
+                
             </div>
         </div>
     </div>

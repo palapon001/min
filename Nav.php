@@ -1,6 +1,13 @@
  <div class="collapse" id="navbarToggleExternalContent">
      <div class="bg-dark p-4">
-         <a href="logout.php" class="btn btn-danger mb-1">ออกจากระบบ</a>
+         <button class="btn btn-primary disabled mb-2">
+             ผู้ใช้ : <?php echo $_SESSION["username"]; ?> / สถานะ : <?php echo $_SESSION["status"]; ?>
+         </button>
+         <br>
+         <?php if ($_SESSION['status'] == 'ADMIN') { ?>
+         <a href="Manager_tb_Login.php" class="btn btn-primary">จัดการข้อมูล Login</a>
+           <?php } ?>
+         <a href="logout.php" class="btn btn-danger">ออกจากระบบ</a>
      </div>
  </div>
  <nav class="navbar navbar-dark bg-dark">
@@ -49,8 +56,8 @@
                                  <input class="form-control" type="text" name="cosA" value="" />
                              </div>
 
-                             
-                            
+
+
                      </div>
                      <div class="modal-footer">
                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
