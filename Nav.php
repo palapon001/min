@@ -5,20 +5,49 @@
          </button>
          <br>
          <?php if ($_SESSION['status'] == 'ADMIN') { ?>
-         <a href="Manager_tb_Login.php" class="btn btn-primary">จัดการข้อมูล Login</a>
-           <?php } ?>
+             <a href="Manager_tb_Login.php" class="btn btn-primary">จัดการข้อมูล Login</a>
+         <?php } ?>
          <a href="logout.php" class="btn btn-danger">ออกจากระบบ</a>
      </div>
  </div>
- <nav class="navbar navbar-dark bg-dark">
+ <nav class="navbar <?php if ($_SESSION["status"] == 'ADMIN') {
+                        echo 'navbar-dark bg-dark';
+                    } else {
+                        echo 'style="background-color: #e3f2fd;';
+                    }
+                    ?>">
      <div class="container-fluid">
          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
              <span class="navbar-toggler-icon"></span>
          </button>
-         <a class="navbar-brand" href="page.php">SCQA</a>
+         <a class="navbar-brand" href="page.php">
+             <div class="input-group">
+                 SCQA
+                 <?php if ($_SESSION["status"] == 'ADMIN') { ?>
+                     <span class="material-symbols-outlined">
+                         admin_panel_settings
+                     </span>
+                     ADMIN
+                 <?php
+                    } else {
+                    ?>
+                     <span class="material-symbols-outlined">
+                         group
+                     </span>
+                     USER
+                 <?php
+                    }
+                    ?>
+             </div>
+         </a>
          <!-- Button trigger modal -->
          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalNAV">
-             เพิ่มข้อมูล
+             <div class="input-group">
+                 <span class="material-symbols-outlined">
+                     add_box
+                 </span>
+                 เพิ่มข้อมูล
+             </div>
          </button>
 
          <!-- Modal -->
