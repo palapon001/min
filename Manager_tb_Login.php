@@ -16,9 +16,22 @@ include 'condb.php';
 
 <body>
     <?php include "Nav.php"; ?>
-    <div class="card mt-3" >
-    <h3 class="card-header">จัดการข้อมูล Login  </h3>
+    <div class="card mt-3">
+        <h3 class="card-header">จัดการข้อมูล Login 
+        </h3>
         <div class="card-body">
+            <p>
+                <center>
+                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#adduser" aria-expanded="false" aria-controls="adduser">
+                เพิ่มข้อมูล User
+            </button>
+                    <div class="collapse" id="adduser">
+                        <div class="card card-body mt-3" style="width: 19rem;">
+                            <?php include './Register.php'; ?>
+                        </div>
+                    </div>
+                </center>
+            </p>
             <div class="table-responsive">
                 <table class='table'>
                     <tr>
@@ -50,11 +63,11 @@ include 'condb.php';
                     }
                     echo "</table>";
                     if ($no == 1) {
-                        ?>
+                    ?>
                         <center>
                             <h1>ไม่พบข้อมูล</h1>
                         </center>
-                        <?php
+                    <?php
                     }
 
                     mysqli_close($con);
