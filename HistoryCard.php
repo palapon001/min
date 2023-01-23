@@ -33,7 +33,9 @@ $ItemName = mysqli_real_escape_string($con, $_GET['ItemName']);
                         <td>Invoice</td>
                         <td>หมายเหตุ</td>
                         <td>แก้ไข</td>
+                        <?php if ($_SESSION['status'] == 'ADMIN') { ?>
                         <td>ลบ</td>
+                        <?php } ?>
                     </tr>
                     <?php
 
@@ -50,7 +52,9 @@ $ItemName = mysqli_real_escape_string($con, $_GET['ItemName']);
                             <td><?php echo $f['sInvoice']; ?></td>
                             <td><?php echo $f['sNote']; ?></td>
                             <td><a href='./additem/HistoryCard-editform.php?sItemID=<?php echo $f['sItemID']; ?>' class="btn btn-warning">แก้ไข</a></td>
+                            <?php if ($_SESSION['status'] == 'ADMIN') { ?>
                             <td><a href='./additem/HistoryCard-del.php?sItemID=<?php echo $f['sItemID']; ?>' class="btn btn-danger" onclick="return confirm('ต้องการจะลบหรือไม่')">ลบ</a></td>
+                            <?php } ?>
 
                         </tr>
 

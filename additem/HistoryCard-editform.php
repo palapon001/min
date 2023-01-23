@@ -67,6 +67,10 @@ extract($row);
                     <span class="input-group-text btn btn-danger" id="basic-addon1">Invoice: </span>
                     <input class="form-control" type="text" name="sInvoice" value="<?php echo $sInvoice; ?>"  />
                 </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text btn btn-danger" id="basic-addon1">Cosmetic/Appearance</span>
+                    <input class="form-control" type="text" name="scosA" value="<?php echo $scosA; ?>" />
+                </div>
                 <p>
                 <div class="mb-3 ">
                     <label for="exampleFormControlTextarea1" class="form-label">หมายเหตุ</label>

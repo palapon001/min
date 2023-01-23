@@ -13,6 +13,7 @@ $Date = $_POST["Date"];
 $Note = $_POST["Note"];
 $DateCode = $_POST["sDateCode"];
 $Invoice = $_POST["sInvoice"];
+$cosA = $_POST["scosA"];
 //ทำการปรับปรุงข้อมูลที่จะแก้ไขลงใน database 
 
 $sql = "UPDATE `saveReport` 
@@ -27,7 +28,8 @@ SET
 `sDate`='$Date' ,
 `sDateCode`='$DateCode' ,
 `sInvoice`='$Invoice' ,
-`sNote`='$Note'
+`sNote`='$Note',
+`scosA`='$cosA'
 
 WHERE sItemID = '$ItemID' ";
 
