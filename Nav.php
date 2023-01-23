@@ -61,6 +61,9 @@
                      <div class="modal-body">
                          <form method="post" action="./additem/additem-add.php">
                              <div class="input-group mb-3">
+                                 <span class="material-symbols-outlined">
+                                     inbox
+                                 </span>
                                  <span class="input-group-text" id="basic-addon1">Item Name: </span>
                                  <input class="form-control" type="text" name="ItemName" value="" />
                              </div>
