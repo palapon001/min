@@ -53,7 +53,7 @@ extract($row);
                     <span class="input-group-text" id="basic-addon1">รูปภาพ</span>
                     <img src="<?php echo $imageFileName; ?>" width="100" height="100">
                     <input class="form-control" type="text" name="imageFileName" value="" disabled />
-                    <input class="form-control" type="hidden" name="imageFileName" value="" />
+                    <input class="form-control" type="hidden" name="imageFileName" value="<?php echo $imageFileName; ?>" />
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text btn btn-danger" id="basic-addon1">Total Quality</span>

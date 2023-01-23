@@ -13,6 +13,7 @@ $Note = $_POST["Note"];
 $DateCode = $_POST["sDateCode"];
 $Invoice = $_POST["sInvoice"];
 $cosA = $_POST["scosA"];
+
 // เช็คว่ามีข้อมูลนี้อยู่หรือไม่
 // $check = "select * from item  where ItemName = '$ItemName' ";
 // $result1 = mysqli_query($con,$check) or die("$check");
@@ -35,6 +36,7 @@ $cosA = $_POST["scosA"];
 	if($imageFileName == ""){
 		$imageFileName = "https://s10x.herokuapp.com/Logo.png" ;
 	}
+	// echo $imageFileName;
 //เพิ่มเข้าไปในฐานข้อมูล
 $sql = "INSERT INTO saveReport(sItemName,sitemColor,sitemRevision,simageFileName,sitemMPN,sTotal,sDate,sNote,sDateCode,sInvoice,scosA)
 			 VALUES('$ItemName','$itemColor','$itemRevision','$imageFileName','$itemMPN','$Total','$Date','$Note','$DateCode','$Invoice','$cosA')";

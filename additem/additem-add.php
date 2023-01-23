@@ -23,6 +23,13 @@ $cosA = $_POST["cosA"];
 	if($imageFileName == ""){
 		$imageFileName = "https://s10x.herokuapp.com/Logo.png" ;
 	}
+	$googleDriveURL = 'https://drive.google.com';
+if (strpos($imageFileName, $googleDriveURL) == false) {
+	$delHeadURL = str_ireplace("https://drive.google.com/file/d/", "", $imageFileName);
+	$delbottomURL = str_ireplace("/view?usp=share_link", "", $delHeadURL);
+	$ReadURL = "https://drive.google.com/uc?export=view&id=";
+	$imageFileName = "$ReadURL$delbottomURL" ;
+}
 //เพิ่มเข้าไปในฐานข้อมูล
 $sql = "INSERT INTO item(ItemName,itemColor,itemRevision,imageFileName,itemMPN,cosA,status)
 			 VALUES('$ItemName','$itemColor','$itemRevision','$imageFileName','$itemMPN','$cosA','กำลังตรวจสอบ')";
@@ -42,4 +49,3 @@ if ($result) {
 	echo "alert('ผิดพลาด ');";
 	echo "</script>";
 }
-?>
