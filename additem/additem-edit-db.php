@@ -14,13 +14,7 @@ $status = $_POST["status"];
 // $Date = $_POST["Date"];
 // $Note = $_POST["Note"];
 //ทำการปรับปรุงข้อมูลที่จะแก้ไขลงใน database 
-$googleDriveURL = 'https://drive.google.com';
-if (strpos($imageFileName, $googleDriveURL) == false) {
-	$delHeadURL = str_ireplace("https://drive.google.com/file/d/", "", $imageFileName);
-	$delbottomURL = str_ireplace("/view?usp=share_link", "", $delHeadURL);
-	$ReadURL = "https://drive.google.com/uc?export=view&id=";
-	$imageFileName = "$ReadURL$delbottomURL" ;
-}
+
 $sql = "UPDATE `item` 
 SET 
 `ItemID`= '$ItemID',
