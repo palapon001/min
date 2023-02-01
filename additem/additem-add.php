@@ -30,9 +30,10 @@ if (strpos($imageFileName, $googleDriveURL) == false) {
 	$ReadURL = "https://drive.google.com/uc?export=view&id=";
 	$imageFileName = "$ReadURL$delbottomURL" ;
 }
+$trimItemName = trim($ItemName);
 //เพิ่มเข้าไปในฐานข้อมูล
 $sql = "INSERT INTO item(ItemName,itemColor,itemRevision,imageFileName,itemMPN,cosA,status)
-			 VALUES('$ItemName','$itemColor','$itemRevision','$imageFileName','$itemMPN','$cosA','กำลังตรวจสอบ')";
+			 VALUES('$trimItemName','$itemColor','$itemRevision','$imageFileName','$itemMPN','$cosA','กำลังตรวจสอบ')";
 
 $result = mysqli_query($con, $sql) or die("Error in query: $sql " );
 //ปิดการเชื่อมต่อ database

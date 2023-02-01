@@ -14,11 +14,11 @@ $status = $_POST["status"];
 // $Date = $_POST["Date"];
 // $Note = $_POST["Note"];
 //ทำการปรับปรุงข้อมูลที่จะแก้ไขลงใน database 
-
+$trimItemName = trim($ItemName);
 $sql = "UPDATE `item` 
 SET 
 `ItemID`= '$ItemID',
-`ItemName`='$ItemName'
+`ItemName`='$trimItemName'
 ,`imageFileName`='$imageFileName',
 `itemColor`='$itemColor',
 `itemRevision`='$itemRevision',
