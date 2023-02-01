@@ -15,10 +15,11 @@ $status = $_POST["status"];
 // $Note = $_POST["Note"];
 //ทำการปรับปรุงข้อมูลที่จะแก้ไขลงใน database 
 $trimItemName = trim($ItemName);
+$ireplaceTrimItemName = str_ireplace(" ","-",$trimItemName);
 $sql = "UPDATE `item` 
 SET 
 `ItemID`= '$ItemID',
-`ItemName`='$trimItemName'
+`ItemName`='$ireplaceTrimItemName'
 ,`imageFileName`='$imageFileName',
 `itemColor`='$itemColor',
 `itemRevision`='$itemRevision',

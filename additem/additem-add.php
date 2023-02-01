@@ -31,9 +31,10 @@ if (strpos($imageFileName, $googleDriveURL) == false) {
 	$imageFileName = "$ReadURL$delbottomURL" ;
 }
 $trimItemName = trim($ItemName);
+$ireplaceTrimItemName = str_ireplace(" ","-",$trimItemName);
 //เพิ่มเข้าไปในฐานข้อมูล
 $sql = "INSERT INTO item(ItemName,itemColor,itemRevision,imageFileName,itemMPN,cosA,status)
-			 VALUES('$trimItemName','$itemColor','$itemRevision','$imageFileName','$itemMPN','$cosA','กำลังตรวจสอบ')";
+			 VALUES('$ireplaceTrimItemName','$itemColor','$itemRevision','$imageFileName','$itemMPN','$cosA','กำลังตรวจสอบ')";
 
 $result = mysqli_query($con, $sql) or die("Error in query: $sql " );
 //ปิดการเชื่อมต่อ database

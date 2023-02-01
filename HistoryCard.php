@@ -22,7 +22,6 @@ $ItemName = mysqli_real_escape_string($con, $_GET['ItemName']);
     <div class="card mt-3" >
     <h3 class="card-header">HistoryCard : <?php echo $ItemName ?> </h3>
         <div class="card-body">
-        <h5>invoice</h5>
             <div class="table-responsive">
                 <table class='table'>
                     <tr>
