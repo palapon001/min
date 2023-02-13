@@ -1,6 +1,16 @@
 <?php
 session_start();
-include 'condb.php';
+include('condb.php');
+if (isset($_POST["search"])) {
+    $search = $_POST["search"];
+} else {
+    $search = "";
+}
+$trimItemName = trim($search);
+$ireplaceTrimItemName = str_ireplace(" ", "-", $trimItemName);
+if (!$_SESSION["id"]) {  //check session
+    Header("Location: ../index.php"); //ไม่พบผู้ใช้กระโดดกลับไปหน้า login form 
+}
 ?>
 
 <!DOCTYPE html>
@@ -44,7 +54,11 @@ include 'condb.php';
                         <td>ลบ</td>
                     </tr>
                     <?php
-                    $sql1 = " SELECT * FROM login ORDER BY login_id ASC ";
+                    if ($search == ""){
+                        $sql1 = " SELECT * FROM login ORDER BY login_id ASC ";
+                    }else{
+                        $sql1 = " SELECT * FROM login Where username LIKE '$search%' ";
+                    }
                     $q = mysqli_query($con, $sql1);
                     $no = 1;
                     while ($f = mysqli_fetch_assoc($q)) {
