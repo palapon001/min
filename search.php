@@ -1,4 +1,13 @@
-<?php session_start();
+<?php
+session_start();
+include('condb.php');
+if (isset($_POST["search"])) {
+    $search = $_POST["search"];
+} else {
+    $search = "";
+}
+$trimItemName = trim($search);
+$ireplaceTrimItemName = str_ireplace(" ", "-", $trimItemName);
 if (!$_SESSION["id"]) {  //check session
     Header("Location: ../index.php"); //ไม่พบผู้ใช้กระโดดกลับไปหน้า login form 
 }
@@ -27,7 +36,9 @@ if (!$_SESSION["id"]) {  //check session
                 <?php
                 include 'commonSearch.php';
                 ?>
-                <h2>ALL ITEM</h2>
+                <p>
+                <h2> ผลลัพธ์ : <?php echo $search ?></h2>
+                </p>
             </center>
 
 
@@ -38,7 +49,11 @@ if (!$_SESSION["id"]) {  //check session
             <div class="container text-center">
                 <div class="row">
                     <?php
-                    $sql1 = " SELECT * FROM item ORDER BY itemid ASC ";
+                    if ($search == ""){
+                        $sql1 = " SELECT * FROM item ORDER BY itemid ASC ";
+                    }else{
+                        $sql1 = " SELECT * FROM item Where ItemName LIKE '$search%' ";
+                    }
                     $q = mysqli_query($con, $sql1);
                     $no = 1;
                     while ($f = mysqli_fetch_assoc($q)) {
