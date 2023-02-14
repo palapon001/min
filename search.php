@@ -15,19 +15,13 @@ if (!$_SESSION["id"]) {  //check session
 
 <!doctype html>
 <html>
-
 <head>
-    <?php
-    include 'HeadDetail.php';
-    ?>
+    <?php include 'HeadDetail.php'; ?>
 </head>
-
 <body>
-    <?php
-
+    <?php 
     include 'bootstrap.php';
     include 'Nav.php';
-
     ?>
     <div class="card">
         <div class="card-body">
@@ -40,12 +34,6 @@ if (!$_SESSION["id"]) {  //check session
                 <h2> ผลลัพธ์ : <?php echo $search ?></h2>
                 </p>
             </center>
-
-
-            <?php
-            include './condb.php';
-            ?>
-
             <div class="container text-center">
                 <div class="row">
                     <?php
@@ -60,7 +48,6 @@ if (!$_SESSION["id"]) {  //check session
                         include 'commonItemCard.php' ;
                         $no++;
                     }
-
                     mysqli_close($con);
                     ?>
 
@@ -69,9 +56,5 @@ if (!$_SESSION["id"]) {  //check session
             </p>
         </div>
     </div>
-
-
-
 </body>
-
 </html>

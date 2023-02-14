@@ -18,7 +18,6 @@ if (!$_SESSION["id"]) {  //check session
 
 <head>
     <?php
-    include 'condb.php';
     include 'HeadDetail.php';
     include 'bootstrap.php';
     ?>
