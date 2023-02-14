@@ -1,9 +1,17 @@
 <?php
 session_start();
-
-include 'condb.php';
-
+include('condb.php');
+if (isset($_POST["search"])) {
+    $search = $_POST["search"];
+} else {
+    $search = "";
+}
+$trimItemName = trim($search);
+$ireplaceTrimItemName = str_ireplace(" ", "-", $trimItemName);
 $ItemName = mysqli_real_escape_string($con, $_GET['ItemName']);
+if (!$_SESSION["id"]) {  //check session
+    Header("Location: ../index.php"); //ไม่พบผู้ใช้กระโดดกลับไปหน้า login form 
+}
 ?>
 
 <!DOCTYPE html>
@@ -19,9 +27,8 @@ $ItemName = mysqli_real_escape_string($con, $_GET['ItemName']);
 
 <body>
     <?php include "Nav.php"; ?>
-    <div class="card mt-3" >
-        <?php include 'commonSearch_History.php'; ?>
-    <h3 class="card-header mt-3">HistoryCard : <?php echo $ItemName ?> </h3>
+    <div class="card mt-3">
+        <h3 class="card-header">HistoryCard : <?php echo $ItemName ?> </h3>
         <div class="card-body">
             <div class="table-responsive">
                 <table class='table'>
@@ -34,12 +41,15 @@ $ItemName = mysqli_real_escape_string($con, $_GET['ItemName']);
                         <td>หมายเหตุ</td>
                         <td>แก้ไข</td>
                         <?php if ($_SESSION['status'] == 'ADMIN') { ?>
-                        <td>ลบ</td>
+                            <td>ลบ</td>
                         <?php } ?>
                     </tr>
                     <?php
-
-                    $sql = " SELECT * FROM saveReport where sItemName ='$ItemName'";
+                    if ($search == "") {
+                        $sql = " SELECT * FROM saveReport where sItemName ='$ItemName' ";
+                    } else {
+                        $sql = " SELECT * FROM saveReport Where  sItemName ='$ItemName' And sInvoice LIKE '$search%' ";
+                    }
                     $q = mysqli_query($con, $sql);
                     $no = 1;
                     while ($f = mysqli_fetch_assoc($q)) {
@@ -53,7 +63,7 @@ $ItemName = mysqli_real_escape_string($con, $_GET['ItemName']);
                             <td><?php echo $f['sNote']; ?></td>
                             <td><a href='./additem/HistoryCard-editform.php?sItemID=<?php echo $f['sItemID']; ?>' class="btn btn-warning">แก้ไข</a></td>
                             <?php if ($_SESSION['status'] == 'ADMIN') { ?>
-                            <td><a href='./additem/HistoryCard-del.php?sItemID=<?php echo $f['sItemID']; ?>' class="btn btn-danger" onclick="return confirm('ต้องการจะลบหรือไม่')">ลบ</a></td>
+                                <td><a href='./additem/HistoryCard-del.php?sItemID=<?php echo $f['sItemID']; ?>' class="btn btn-danger" onclick="return confirm('ต้องการจะลบหรือไม่')">ลบ</a></td>
                             <?php } ?>
 
                         </tr>
@@ -63,11 +73,11 @@ $ItemName = mysqli_real_escape_string($con, $_GET['ItemName']);
                     }
                     echo "</table>";
                     if ($no == 1) {
-                        ?>
+                    ?>
                         <center>
                             <h1>ไม่พบข้อมูล</h1>
                         </center>
-                        <?php
+                    <?php
                     }
 
                     mysqli_close($con);
