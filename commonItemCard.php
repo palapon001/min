@@ -15,7 +15,7 @@
                                         ข้อมูล
                                     </button>
                                     <?php if ($_SESSION['status'] == 'ADMIN') { ?>
-                                        <a href='additem/additem-del.php?ItemID=<?php echo $f['ItemID']; ?> ' class="btn btn-danger">ลบข้อมูล</a>
+                                        <a href='additem/additem-del.php?ItemID=<?php echo $f['ItemID']; ?> ' class="btn btn-danger" onclick="return confirm('ต้องการจะลบหรือไม่')">ลบข้อมูล</a>
                                     <?php } ?>
                                     <a href='HistoryCard.php?ItemName=<?php echo $f['ItemName']; ?>' class="mt-3 btn btn-primary form-control">History Card</a>
                                     <!-- Modal -->
