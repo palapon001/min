@@ -40,7 +40,7 @@ if (!$_SESSION["id"]) {  //check session
                     if ($search == ""){
                         $sql1 = " SELECT * FROM item ORDER BY itemid ASC ";
                     }else{
-                        $sql1 = " SELECT * FROM item Where ItemName LIKE '$search%' ";
+                        $sql1 = " SELECT * FROM item Where ItemName LIKE '$trimItemName%' ";
                     }
                     $q = mysqli_query($con, $sql1);
                     $no = 1;

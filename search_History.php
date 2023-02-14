@@ -48,7 +48,7 @@ if (!$_SESSION["id"]) {  //check session
                     if ($search == "") {
                         $sql = " SELECT * FROM saveReport where sItemName ='$ItemName' ";
                     } else {
-                        $sql = " SELECT * FROM saveReport Where sInvoice LIKE '$search%' ";
+                        $sql = " SELECT * FROM saveReport Where sInvoice LIKE '$trimItemName%' ";
                     }
                     $q = mysqli_query($con, $sql);
                     $no = 1;

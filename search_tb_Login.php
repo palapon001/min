@@ -56,7 +56,7 @@ if (!$_SESSION["id"]) {  //check session
                     if ($search == ""){
                         $sql1 = " SELECT * FROM login ORDER BY login_id ASC ";
                     }else{
-                        $sql1 = " SELECT * FROM login Where username LIKE '$search%' ";
+                        $sql1 = " SELECT * FROM login Where username LIKE '$trimItemName%' ";
                     }
                     $q = mysqli_query($con, $sql1);
                     $no = 1;
