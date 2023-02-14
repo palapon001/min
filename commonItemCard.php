@@ -40,7 +40,9 @@
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ปิด</button>
+                                                    <?php if ($_SESSION['status'] == 'ADMIN') { ?>
                                                     <a href='./additem/additem-editform.php?ItemID=<?php echo $f['ItemID']; ?> ' class="btn btn-warning">แก้ไข</a>
+                                                    <?php } ?>
                                                     <a href='./additem/additemcheck-editform.php?ItemID=<?php echo $f['ItemID']; ?> ' class="btn btn-primary">เพิ่มข้อมูลการตรวจสอบชิ้นงาน</a>
                                                 </div>
                                             </div>
