@@ -30,7 +30,7 @@ extract($row);
             <p class="card-text">
             <form method="post" action="additem-edit-db.php">
                 <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1">itemname: </span>
+                    <span class="input-group-text" id="basic-addon1">Itemname: </span>
                     <input class="form-control" type="text" name="ItemName" value="<?php echo $ItemName; ?>" />
                 </div>
                 <div class="input-group mb-3">
