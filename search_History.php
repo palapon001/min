@@ -8,7 +8,7 @@ if (isset($_POST["search"])) {
 }
 $trimItemName = trim($search);
 $ireplaceTrimItemName = str_ireplace(" ", "-", $trimItemName);
-$ItemName = mysqli_real_escape_string($con, $_GET['ItemName']);
+
 if (!$_SESSION["id"]) {  //check session
     Header("Location: ../index.php"); //ไม่พบผู้ใช้กระโดดกลับไปหน้า login form 
 }
@@ -28,7 +28,7 @@ if (!$_SESSION["id"]) {  //check session
 <body>
     <?php include "Nav.php"; ?>
     <div class="card mt-3">
-        <h3 class="card-header">HistoryCard : <?php echo $ItemName ?> </h3>
+        <h3 class="card-header">Invoice : <?php echo $search ?> </h3>
         <div class="card-body">
             <div class="table-responsive">
                 <table class='table'>
@@ -48,7 +48,7 @@ if (!$_SESSION["id"]) {  //check session
                     if ($search == "") {
                         $sql = " SELECT * FROM saveReport where sItemName ='$ItemName' ";
                     } else {
-                        $sql = " SELECT * FROM saveReport Where  sItemName ='$ItemName' And sInvoice LIKE '$search%' ";
+                        $sql = " SELECT * FROM saveReport Where sInvoice LIKE '$search%' ";
                     }
                     $q = mysqli_query($con, $sql);
                     $no = 1;
