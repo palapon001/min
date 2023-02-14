@@ -34,7 +34,7 @@
                                                     <h5 class="card-title">Color : <?php echo $f['itemColor']; ?></h5>
                                                     <h5 class="card-title">Revision: <?php echo $f['itemRevision']; ?></h5>
                                                     <h5 class="card-title">MPN : <?php echo $f['itemMPN']; ?></h5>
-                                                    <h5 class="card-title"><?php echo $f['cosA']; ?></h5>
+                                                    <h5 class="card-title">Cosmetic: <?php echo $f['cosA']; ?></h5>
 
                                                     </p>
                                                 </div>
