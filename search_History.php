@@ -33,9 +33,9 @@ if (!$_SESSION["id"]) {  //check session
             <div class="table-responsive">
                 <table class='table'>
                     <tr>
-                        <td>NO</td>
+                        <td>No.</td>
                         <td>Total Quality</td>
-                        <td>Date No</td>
+                        <td>Date No.</td>
                         <td>Date Code</td>
                         <td>Invoice</td>
                         <td>หมายเหตุ</td>

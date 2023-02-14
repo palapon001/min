@@ -36,7 +36,7 @@ include 'condb.php';
             <div class="table-responsive">
                 <table class='table'>
                     <tr>
-                        <td>NO</td>
+                        <td>No.</td>
                         <td>username</td>
                         <td>password</td>
                         <td>สถานะ</td>
