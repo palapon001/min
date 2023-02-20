@@ -3,7 +3,7 @@ $con= mysqli_connect("h1use0ulyws4lqr1.cbetxkdyhwsb.us-east-1.rds.amazonaws.com"
 // $host = "localhost";
 // $user = "root";
 // $pass = "";
-// $db = "min";
+// $db = "MIN";
 // $con= mysqli_connect($host,$user,$pass,$db);//Local
 if(!$con){
    die("condb err");
